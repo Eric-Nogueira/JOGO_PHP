@@ -24,6 +24,7 @@
     </form>
     
     <script src="assets/js/script.js"></script>
+    
 </body>
 
 </html>
@@ -35,6 +36,7 @@ session_start();
 $number = file_get_contents('dados.json');
 $palpite = $_POST['palpite'];
 $button = $_POST['button'];
+
 $_SESSION['buttonClickCount'];
 if (!empty($button) && !empty($palpite)) {
     $_SESSION['buttonClickCount']++;
