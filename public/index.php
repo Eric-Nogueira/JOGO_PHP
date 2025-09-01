@@ -14,14 +14,12 @@
 </head>
 
 <body>
-    <div id="body">
         <h1>JOGO DA ADVINHAÇÃO</h1>
         <!-- JOGO DE ARTHUR O. G. NOVAIS, DANIEL A. BRITO, ENZO A. V. FARIAS E ERIC N. SILVA -->
         <form method="post" id="form">
             <label for="number">Diga um número para que o próximo player acerte</label>
             <input type="number" name="number" id="number" min="1" max="20">
             <button type="submit" name="button" value="1">Tentar</button>
-            <script src="assets/js/script.js"></script>
         </form>
         <?php
 
@@ -32,15 +30,13 @@
         if (!empty($number)) {
             file_put_contents($arquivo, $jsonContent);
             header("Location: pagetwo.php");
-            ob_end_clean();
             die();
         } else {
             if(isset($_POST['button'])){
-            echo '<p style="color: #ff0000">Insira um número</p>';
+            echo '<p style="color: #ff0000" class="errorMessage">Insira um número</p>';
             }
         }
         ?>
-    </div>
 </body>
 
 </html>

@@ -25,6 +25,7 @@ body {
     padding: 20px;
     text-align: center;
     padding: 0;
+    width: 100%;
 }
 
 form {
@@ -37,12 +38,9 @@ form {
     max-width: 500px;
     text-align: center;
     margin: 0;
+    margin-left: 28%;
 }
 
-span{
-    display: none;
-    color: #ff0000;
-}
 
 label{
     display: block;
@@ -62,17 +60,27 @@ input{
 button{
     display: block;
     border: none;
+    height: 30px;
+    width: auto;
     border-radius: 5px;
     font-size: 1rem;
     cursor: pointer;
     margin: auto;
+    padding: 5px;
 }
 
 button:hover {
     background: #9cef75;
     transform: scale(1.05);
+    transition: 0.2s;
 }
 
 button:active {
     transform: scale(0.95);
+    transition: 0.2s;
+}
+
+p{
+    margin: 15px 0px;
+    font-weight: bold;
 }

@@ -16,11 +16,14 @@
 <body>
     <h1>JOGO DA ADVINHAÇÃO</h1>
     <!-- JOGO DE ARTHUR O. G. NOVAIS, DANIEL A. BRITO, ENZO A. V. FARIAS E ERIC N. SILVA -->
+    <h2 id="remainingTentatives"></h2>
     <form method="post" id="form">
         <label for="number">Advinhe o número pensado pelo player anterior</label>
         <input type="number" name="palpite" id="palpite" min="1" max="20">
-        <button type="submit" name="button" value="1">Tentar</button>
+        <button type="submit" name="button" value="1" id="try">Tentar</button>
     </form>
+    
+    <script src="assets/js/script.js"></script>
 </body>
 
 </html>
@@ -33,29 +36,29 @@ $number = file_get_contents('dados.json');
 $palpite = $_POST['palpite'];
 $button = $_POST['button'];
 $_SESSION['buttonClickCount'];
-if(!empty($button) && !empty($palpite)){
+if (!empty($button) && !empty($palpite)) {
     $_SESSION['buttonClickCount']++;
     echo $_SESSION['buttonClickCount'];
 }
 
-if($palpite > $number){
-    echo '<p>Tente um número menor que '. $palpite. '</p>';
-} elseif($palpite < $number){
-    echo '<p>Tente um número maior que '. $palpite. '</p>';
-} elseif($palpite == $number){
+if ($palpite > $number) {
+    echo '<p>Tente um número menor que ' . $palpite . '</p>';
+} elseif ($palpite < $number) {
+    echo '<p>Tente um número maior que ' . $palpite . '</p>';
+} elseif ($palpite == $number) {
     echo '<p>Você acertou!</p>';
     echo '<form method="post"><button type="submit" name="tryAgain" value="1">Tentar novamente</button></form>';
 }
 
-if($_SESSION['buttonClickCount']>=5 && $palpite!==$number){
+if ($_SESSION['buttonClickCount'] >= 5 && $palpite !== $number) {
     echo '<p>Número de tentativas excedido!<br>
-    O número era '.$number.'
+    O número era ' . $number . '
     </p>';
 
     echo '<form method="post"><button type="submit" name="tryAgain" value="1">Tentar novamente</button></form>';
 }
 
-if(!empty($_POST['tryAgain'])){
+if (!empty($_POST['tryAgain'])) {
     session_destroy();
     header("Location: index.php");
 }
