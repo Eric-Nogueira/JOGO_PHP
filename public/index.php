@@ -14,29 +14,52 @@
 </head>
 
 <body>
-        <h1>JOGO DA ADVINHAÇÃO</h1>
-        <!-- JOGO DE ARTHUR O. G. NOVAIS, DANIEL A. BRITO, ENZO A. V. FARIAS E ERIC N. SILVA -->
-        <form method="post" id="form">
-            <label for="number">Diga um número para que o próximo player acerte</label>
-            <input type="number" name="number" id="number" min="1" max="20">
-            <button type="submit" name="button" value="1">Tentar</button>
-        </form>
-        <?php
 
-        $number = (int)$_POST['number'];
-        $jsonContent = json_encode($number);
-        $arquivo = 'dados.json';
+    <button type="button" id="toggleGitHub" style="margin-top: 15px;" onclick="TogglePage()">GitHub</button>
 
-        if (!empty($number)) {
-            file_put_contents($arquivo, $jsonContent);
-            header("Location: pagetwo.php");
-            die();
-        } else {
-            if(isset($_POST['button'])){
+    <div id="gitHub" class="gitHub">
+
+        <h2>GitHub dos dev's:</h2>
+
+        <br>
+
+        <pre>
+<div class="item"><img src="assets/img/arthurPFP.png" alt="Ícone de Arthur"><h5>Arthur: Olithur</h5></div>
+<div class="item"><img src="assets/img/danielPFP.jpg" alt="Ícone de Daniel"><h5>Daniel: Daniel Alves (@allvez-1)</h5></div>
+<div class="item"><img src="assets/img/enzoPFP.png" alt="Ícone de Enzo"><h5>Enzo: EnzoMurky</h5></div>
+<div class="item"><img src="assets/img/ericPFP.jpg" alt="Ícone de Eric"><h5>Eric: Nogueira (@Eric-Nogueira)</div>
+        </pre>
+
+    </div>
+
+    <h1>JOGO DA ADVINHAÇÃO</h1>
+    <!-- JOGO DE ARTHUR O. G. NOVAIS, DANIEL A. BRITO, ENZO A. V. FARIAS E ERIC N. SILVA -->
+    <form method="post" id="form">
+        <label for="number">Diga um número para que o próximo player acerte</label>
+        <input type="number" name="number" id="number" min="1" max="20">
+        <button type="submit" name="button" value="1">Tentar</button>
+    </form>
+
+    
+
+    <?php
+
+    $number = (int) $_POST['number'];
+    $jsonContent = json_encode($number);
+    $arquivo = 'dados.json';
+
+    if (!empty($number)) {
+        file_put_contents($arquivo, $jsonContent);
+        header("Location: pagetwo.php");
+        die();
+    } else {
+        if (isset($_POST['button'])) {
             echo '<p style="color: #ff0000" class="errorMessage">Insira um número</p>';
-            }
         }
-        ?>
+    }
+    ?>
+
+    <script src="assets/js/script.js"></script>
 </body>
 
 </html>

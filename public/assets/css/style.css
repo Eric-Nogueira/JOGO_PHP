@@ -5,9 +5,10 @@
 }
 
 h1 {
-    margin-bottom: 20px;
     margin-top: 3rem;
     color: #2c3e50;
+    margin-bottom: 20px;
+    
 }
 
 html {
@@ -25,6 +26,9 @@ body {
     text-align: center;
     padding: 0;
     width: 100%;
+    position: relative;
+    z-index: 1;
+    height: 100%;
 }
 
 form {
@@ -82,5 +86,34 @@ button:active {
 p{
     margin: 15px 0px;
     font-weight: bold;
-
 }
+
+.item img {
+    height: 50px;
+    width: 50px;
+    border-radius: 100%;
+}
+
+.gitHub{
+    display: none;
+    height: 100%;
+    width: 100%;
+    position:fixed;
+    z-index: 2;
+    background: #000000f1;
+    color: #fff;
+    background-size: 100vh;
+}
+
+.gitHub > h2 {
+    margin-top: 10vh;
+    font-size: 40pt;
+}
+
+#toggleGitHub {
+    position: absolute;
+    z-index: 3;
+    margin-left: 5px;
+    background: none;
+}
+

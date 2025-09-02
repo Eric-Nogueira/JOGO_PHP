@@ -14,6 +14,24 @@
 </head>
 
 <body>
+
+    <button type="button" id="toggleGitHub" style="margin-top: 15px;" onclick="TogglePage()">GitHub</button>
+
+    <div id="gitHub" class="gitHub">
+
+        <h2>GitHub dos dev's:</h2>
+
+        <br>
+
+        <pre>
+<div class="item"><img src="assets/img/arthurPFP.png" alt="Ícone de Arthur"><h5>Arthur: Olithur</h5></div>
+<div class="item"><img src="assets/img/danielPFP.jpg" alt="Ícone de Daniel"><h5>Daniel: Daniel Alves (@allvez-1)</h5></div>
+<div class="item"><img src="assets/img/enzoPFP.png" alt="Ícone de Enzo"><h5>Enzo: EnzoMurky</h5></div>
+<div class="item"><img src="assets/img/ericPFP.jpg" alt="Ícone de Eric"><h5>Eric: Nogueira (@Eric-Nogueira)</div>
+        </pre>
+
+    </div>
+    
     <h1>JOGO DA ADVINHAÇÃO</h1>
     <!-- JOGO DE ARTHUR O. G. NOVAIS, DANIEL A. BRITO, ENZO A. V. FARIAS E ERIC N. SILVA -->
     <h2 id="remainingTentatives"></h2>
@@ -22,9 +40,8 @@
         <input type="number" name="palpite" id="palpite" min="1" max="20">
         <button type="submit" name="button" value="1" id="try">Tentar</button>
     </form>
-    
+
     <script src="assets/js/script.js"></script>
-    
 </body>
 
 </html>
@@ -36,7 +53,6 @@ session_start();
 $number = file_get_contents('dados.json');
 $palpite = $_POST['palpite'];
 $button = $_POST['button'];
-
 $_SESSION['buttonClickCount'];
 if (!empty($button) && !empty($palpite)) {
     $_SESSION['buttonClickCount']++;
