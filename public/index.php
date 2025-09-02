@@ -24,10 +24,10 @@
         <br>
 
         <pre>
-<div class="item"><img src="assets/img/arthurPFP.png" alt="Ícone de Arthur"><h5>Arthur: Olithur</h5></div>
-<div class="item"><img src="assets/img/danielPFP.jpg" alt="Ícone de Daniel"><h5>Daniel: Daniel Alves (@allvez-1)</h5></div>
-<div class="item"><img src="assets/img/enzoPFP.png" alt="Ícone de Enzo"><h5>Enzo: EnzoMurky</h5></div>
-<div class="item"><img src="assets/img/ericPFP.jpg" alt="Ícone de Eric"><h5>Eric: Nogueira (@Eric-Nogueira)</div>
+<div class="item"><img src="assets/img/arthurPFP.png" alt="Ícone de Arthur"><a href="https://github.com/Olithur"><h5>Arthur: Olithur</h5></a></div>
+<div class="item"><img src="assets/img/danielPFP.jpg" alt="Ícone de Daniel"><a href="https://github.com/allvez-1"><h5>Daniel: Daniel Alves (@allvez-1)</h5></a></div>
+<div class="item"><img src="assets/img/enzoPFP.png" alt="Ícone de Enzo"><a href="https://github.com/EnzoMurky"><h5>Enzo: EnzoMurky</h5></a></div>
+<div class="item"><img src="assets/img/ericPFP.jpg" alt="Ícone de Eric"><a href="https://github.com/Eric-Nogueira"><h5>Eric: Nogueira (@Eric-Nogueira)</h5></a></div>
         </pre>
 
     </div>

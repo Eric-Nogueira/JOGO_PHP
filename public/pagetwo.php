@@ -24,17 +24,29 @@
         <br>
 
         <pre>
-<div class="item"><img src="assets/img/arthurPFP.png" alt="Ícone de Arthur"><h5>Arthur: Olithur</h5></div>
-<div class="item"><img src="assets/img/danielPFP.jpg" alt="Ícone de Daniel"><h5>Daniel: Daniel Alves (@allvez-1)</h5></div>
-<div class="item"><img src="assets/img/enzoPFP.png" alt="Ícone de Enzo"><h5>Enzo: EnzoMurky</h5></div>
-<div class="item"><img src="assets/img/ericPFP.jpg" alt="Ícone de Eric"><h5>Eric: Nogueira (@Eric-Nogueira)</div>
+<div class="item"><img src="assets/img/arthurPFP.png" alt="Ícone de Arthur"><a href="https://github.com/Olithur"><h5>Arthur: Olithur</h5></a></div>
+<div class="item"><img src="assets/img/danielPFP.jpg" alt="Ícone de Daniel"><a href="https://github.com/allvez-1"><h5>Daniel: Daniel Alves (@allvez-1)</h5></a></div>
+<div class="item"><img src="assets/img/enzoPFP.png" alt="Ícone de Enzo"><a href="https://github.com/EnzoMurky"><h5>Enzo: EnzoMurky</h5></a></div>
+<div class="item"><img src="assets/img/ericPFP.jpg" alt="Ícone de Eric"><a href="https://github.com/Eric-Nogueira"><h5>Eric: Nogueira (@Eric-Nogueira)</h5></a></div>
         </pre>
 
     </div>
     
     <h1>JOGO DA ADVINHAÇÃO</h1>
     <!-- JOGO DE ARTHUR O. G. NOVAIS, DANIEL A. BRITO, ENZO A. V. FARIAS E ERIC N. SILVA -->
-    <h2 id="remainingTentatives"></h2>
+
+     <?php
+     session_start();
+
+$number = file_get_contents('dados.json');
+$palpite = $_POST['palpite'];
+$button = $_POST['button'];
+$_SESSION['buttonClickCount'];
+if (!empty($button) && !empty($palpite)) {
+    $_SESSION['buttonClickCount']++;
+    echo "<p>Tentativas restantes: ". 5 - $_SESSION['buttonClickCount'] . "</p>";
+}
+     ?>
     <form method="post" id="form">
         <label for="number">Advinhe o número pensado pelo player anterior</label>
         <input type="number" name="palpite" id="palpite" min="1" max="20">
@@ -47,21 +59,9 @@
 </html>
 
 <?php
-
-session_start();
-
-$number = file_get_contents('dados.json');
-$palpite = $_POST['palpite'];
-$button = $_POST['button'];
-$_SESSION['buttonClickCount'];
-if (!empty($button) && !empty($palpite)) {
-    $_SESSION['buttonClickCount']++;
-    echo $_SESSION['buttonClickCount'];
-}
-
-if ($palpite > $number) {
+if ($palpite > $number && !empty($button) && !empty($palpite)) {
     echo '<p>Tente um número menor que ' . $palpite . '</p>';
-} elseif ($palpite < $number) {
+} elseif ($palpite < $number && !empty($button) && !empty($palpite)) {
     echo '<p>Tente um número maior que ' . $palpite . '</p>';
 } elseif ($palpite == $number) {
     echo '<p>Você acertou!</p>';

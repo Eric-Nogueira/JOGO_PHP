@@ -117,3 +117,16 @@ p{
     background: none;
 }
 
+.item > a > h5:hover{
+    color: #0088b9;
+    transition: 0.3s linear;
+}
+
+.item > a > h5{
+    transition: 0.3s linear;
+    color: #fff;
+}
+
+a {
+    text-decoration: none;
+}
